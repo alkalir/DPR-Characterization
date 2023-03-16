@@ -199,16 +199,17 @@ def main(argv):
   bopt = False
   wopt = False  
   ofopt = False
+  platopt = False
   
   try:
-    opts, args = getopt.getopt(argv,"hb:w:o:",["bytesize=","wordsize=","ofile="])
+    opts, args = getopt.getopt(argv,"hb:w:o:p:",["bytesize=","wordsize=","ofile=", "platform="])
   except getopt.GetoptError:
-    print('bitstream_nop_generator.py -b <size in Bytes> -w <size in Words> -o <outputfile>')
+    print('bitstream_nop_generator.py -b <size in Bytes> -w <size in Words> -o <outputfile> -p <platform>')
     sys.exit(2)
   for opt, arg in opts:
     print('opt={} arg={}'.format(opt, arg))
     if opt == '-h':
-      print('bitstream_nop_generator.py -b <size in Bytes> -w <size in Words> -o <outputfile>')
+      print('bitstream_nop_generator.py -b <size in Bytes> -w <size in Words> -o <outputfile> -p <platform>')
       sys.exit()
     elif opt in ("-b", "--bytesize"):
       bopt = True
@@ -219,6 +220,9 @@ def main(argv):
     elif opt in ("-o", "--ofile"):
       outputfile = arg
       ofopt = True
+    elif opt in ("-p", "--platform"):
+      platform = arg
+      platopt = True
 
   
   #check dimension
