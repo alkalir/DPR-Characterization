@@ -8,7 +8,7 @@ import pathlib
 BIT = 0x00
 BIN = 0xff
 
-BIT_STREAM_MAX_BYTES  =  0x01130000  
+BIT_STREAM_MAX_BYTES  =  0x01130000  # max pBS size 18 MB
 XST_FAILURE = 1
 GLOBAL_bitOrBin = BIN
 
@@ -134,8 +134,6 @@ def Generate_NOP_BS(sizeWords, bsnfo):
     print("ERROR::Generate_NOP_BS: 40 < sizeWords < 4505600 !!!")
     return XST_FAILURE
   
-  print("have to generate {} words".format(sizeWords))
-
   #head
   [headBuf,headIndex] = HeadGeneration()
   
@@ -145,7 +143,6 @@ def Generate_NOP_BS(sizeWords, bsnfo):
   
   #NOPs
   nops_count = sizeWords - (headIndex + tailIndex)
-  print("nops_count={}".format(nops_count))
 
 
   for i in range(headIndex):
@@ -206,7 +203,6 @@ def main(argv):
     print('bitstream_nop_generator.py -b <size in Bytes> -w <size in Words> -o <outputfile>')
     sys.exit(2)
   for opt, arg in opts:
-    print('opt={} arg={}'.format(opt, arg))
     if opt == '-h':
       print('bitstream_nop_generator.py -b <size in Bytes> -w <size in Words> -o <outputfile>')
       sys.exit()
@@ -236,8 +232,6 @@ def main(argv):
       print('Size in Bytes should be a multiple of 32bit words, so a multiple of 4')
       print('A size of {} Bytes, {} Words, will be used'.format(w_size*4,w_size))
   
-  #at this point we have size in words
-  print("Filesize will be: {} Bytes ({} Words)".format(w_size*4,w_size))
   
   if not ofopt:
     floc = pathlib.Path(".").parent
@@ -251,7 +245,7 @@ def main(argv):
       sys.exit()
     print('')
   else:
-    print('\nOUT FILE: {}\n'.format(outputfile))
+    print('OUTPUT FILE name: {}'.format(outputfile))
   
   fo = open(outputfile, "wb")
 
