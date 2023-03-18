@@ -11,17 +11,16 @@ The *DPR Injector* is an open-source SW-module that supports on the generation o
 Given as input the required pBS size (in Bytes or in Words), the DPR Injector allows to generate a pBS of the required size without performing the long and tedious DPR flow (synthesis, drawing of reconfiguration areas, implementation, and pBS generation) [1].
 
 
-The module is available for two platforms: Xilinx Zynq7000 and Xilinx Zynq Ultrascale+.  
+The module is currently available for two platforms: Xilinx Zynq7000 and Xilinx Zynq Ultrascale+.  
 To get started:
 - install python3
 - clone this repository
 - access the folder DPR_Injector
-- access the folder of the selected target
-- follow the README inside each folder
+- follow the README
 
 
 ## Characterization Results
-The folder contains the characterization results for Zynq Ultrascale+ target.
+The folder contains the characterization results for the ZU9EG SoC target (Xilinx Zynq Ultrascale+). Tests have been performed using a Xilinx ZCU102 Development Board.
 
 References:  
 [1] Kizheppatt Vipin and Suhaib A. Fahmy. 2018. FPGA Dynamic and Partial Reconfiguration: A Survey of Architectures, Methods, and Applications. ACM Comput. Surv. 51, 4, Article 72 (July 2019), 39 pages.

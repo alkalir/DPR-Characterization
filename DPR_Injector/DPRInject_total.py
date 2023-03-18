@@ -27,6 +27,9 @@ def main(argv):
     if opt == '-h':
       print('Usage:')
       print('bitstream_nop_generator.py -b <size in Bytes> -w <size in Words> -o <outputfile> -p <platform>')
+      print('<platform> can be Zynq7000 or ZUS+')
+      print('Results are stored in the corresponding folder\n')
+      print('\nStop DPR Injector\n')
       sys.exit()
     elif opt in ("-b", "--bytesize"):
       bopt = True
