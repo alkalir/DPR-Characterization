@@ -2,7 +2,7 @@
 
 This repository contains the tools to characterize the Dynamic Partial Reconfiguration (DPR) behavior on Heterogeneous System-on-Chip targets having this feature.  
 The folder is organized as follows:
-- *DPR_Injector*: folder containing the DPR Injector SW-module
+- *DPR_Injector*: folder containing the DPR Injector SW-module.
 - *CharacterizationResults*: folder containing the results of characterization for selected targets
 
 
@@ -18,6 +18,7 @@ To get started:
 - access the folder DPR_Injector
 - follow the README
 
+Inside the DPR_Injector folder, there is also a comparison between a DPR with originali pBSs and generated pBSs, showing a maximum relative error less than 0.5%.
 
 ## Characterization Results
 The folder contains the characterization results for the ZU9EG SoC target (Xilinx Zynq Ultrascale+). Tests have been performed using a Xilinx ZCU102 Development Board.
